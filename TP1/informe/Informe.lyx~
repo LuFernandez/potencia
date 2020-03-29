@@ -1,0 +1,569 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 25mm
+\topmargin 2.5cm
+\rightmargin 25mm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "caratulaCONTROL-TPF.lyx"
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El siguiente proyecto consiste en la realizacion de un sistema que controle
+ la altura a la que levita una pelota de ping pong dentro de un tubo plástico.
+ El controlador se realizó utilizando PID digital por medio de un arduino.
+\end_layout
+
+\begin_layout Standard
+A lo largo de este informe se explicará el modelo físico del problema, la
+ implementación del controlador así como los resultados del mismo.
+\end_layout
+
+\begin_layout Section
+Objetivos y resumen
+\end_layout
+
+\begin_layout Standard
+El objetivo principal del proyecto es poder lograr que una pelota de ping
+ pong se mantenga a una altura constante dentro de un tubo plástico a pesar
+ de posibles alteraciones en la posición de la misma.
+\end_layout
+
+\begin_layout Standard
+La planta de nuestro sistema consiste, como se mencionó previamente, de
+ un tubo plástico posicionado de manera vertical dentro del cual se encuentra
+ la pelota de ping pong.
+ Para mantenerla en una misma posición se cuenta con un ventilador en la
+ base del tubo que levanta la pelota, como también de un sensor infrarrojo
+ en la parte superior del tubo que censa la posición de la misma.
+ La función del Arduino es controlar la velocidad del ventilador mediante
+ control PID para variar el flujo del aire y permitir que la pelota se mantenga
+ estable.
+\end_layout
+
+\begin_layout Standard
+Cabe aclarar que el tubo cuenta con ranuras laterales para permitir el flujo
+ de aire hacia el exterior proveniente del ventilador.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Imagen del sistema implementado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Marco Teórico
+\end_layout
+
+\begin_layout Standard
+Para el modelado físico del sistema se considera que sólo actúan dos fuerzas
+ para la pelota que está dentro del tubo, la fuerza del aire que empuja
+ a la pelota y la fuerza gravitacional.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imagenes/Fisico.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de fuerzas de la pelota dentro del tubo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De la segunda Ley de Newton se tiene que:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\[
+m\frac{d^{2}y}{dt^{2}}=\sum F_{y}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\[
+m\frac{d^{2}y}{dt^{2}}=F_{aire}-F_{g}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\frac{d^{2}y}{dt^{2}}=\frac{1}{2m}C_{d}\rho\pi r^{2}(v_{aire}-\frac{dy}{dt})^{2}-g
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\rho\sim1.2kg/m^{3}$
+\end_inset
+
+, la densidad volumétrica del aire
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m=2.7g$
+\end_inset
+
+, la masa de la pelota de ping pong
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r=2cm$
+\end_inset
+
+ es el radio de la pelota de ping pong
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ es la posición vertical de la pelota dentro del tubo
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $v_{aire}$
+\end_inset
+
+ es la rapidez promedio del aire cerca de la pelota
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $g=9.81m/s^{2}$
+\end_inset
+
+, la constante gravitacional
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{d}=\frac{24}{Re}+\frac{6}{1+\sqrt{Re}}+0.4$
+\end_inset
+
+, el coeficiente de arrastre
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Re=\frac{2r\rho(v_{aire}-\frac{dy}{dt})}{\eta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\eta$
+\end_inset
+
+ es la viscosidad dinámica del aire.
+\end_layout
+
+\begin_layout Standard
+Asumiendo que 
+\begin_inset Formula $Re>1000$
+\end_inset
+
+ (
+\begin_inset Formula $C_{d}\thickapprox0.4$
+\end_inset
+
+) lo cual es válido si la pelota tiene un radio de 2cm y la velocidad del
+ aire es mayor a 
+\begin_inset Formula $0.66\frac{m}{seg}$
+\end_inset
+
+.
+ Entonces la ecuación del problema resulta:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula 
+\begin{equation}
+\frac{d^{2}y}{dt^{2}}=\frac{1}{5m}\rho\pi r^{2}(v_{aire}-\frac{dy}{dt})^{2}-g\label{eq:Edo}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consideramos como la salida del sistema la altura de la pelota de ping pong
+ con respecto a la base con el ventilador, mientras que la entrada del sistema
+ es la tensión de continua que fija la velocidad con la que gira el ventilador
+ de la base.
+ La variable 
+\begin_inset Formula $v_{aire}$
+\end_inset
+
+ en la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Edo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ está relacionada con la velocidad con la que gira el ventilador mediante
+ una función matemática desconocida 
+\begin_inset Formula $v_{aire}=f(y,V_{DC})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Debido a la complejidad del modelo, se decidió obtener la transferencia
+ a lazo abierto del sistema de manera empírica a través de un análisis de
+ la salida obtenida a partir de una determinada entrada cerca del punto
+ de equilibrio del sistema.
+ Se puede ver de la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Edo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ que el sistema no es lineal por lo que se eligió como punto de equilibrio
+ la altura correspondiente a la mitad del tubo y se trabaja como si el sistema
+ fuera lineal cerca de dicho punto de equilibrio.
+\end_layout
+
+\begin_layout Standard
+Encontrando la relación lineal entre la tensión proporcionada al ventilador
+ y su velocidad resultante, es decir, algo de la forma 
+\begin_inset Formula $v_{aire}[m/s]=K_{a}.V_{DC}+cte$
+\end_inset
+
+, la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Edo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ quedaría en función de la entrada del sistema 
+\begin_inset Formula $V_{DC}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+rpm en funcion de Vdc?; grafico y relacion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modelo del sistema
+\end_layout
+
+\begin_layout Standard
+Se quiere llegar a las ecuaciones de estado que tienen la forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+\dot{\mathbf{X}}(t)=A\mathbf{X}(t)+B\mathbf{U}(t)\\
+\mathbf{Y}(t)=C\mathbf{X}(t)+D\mathbf{U}(t)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Renombrando la posición vertical de la pelota dentro del tubo como 
+\begin_inset Formula $x$
+\end_inset
+
+, siendo 
+\begin_inset Formula $\frac{dx}{dt}=v_{pelota}$
+\end_inset
+
+, la velocidad de la pelota, y la entrada 
+\begin_inset Formula $u=V_{DC}$
+\end_inset
+
+, la tensión continua, se tienen las siguientes ecuaciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{aire}=K_{a}.V_{DC}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dx}{dt}=v_{pelota}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{dv_{pelota}}{dt}=\frac{1}{5m}\rho\pi r^{2}(v_{aire}-v_{pelota})^{2}-g
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se observa que la última ecuación no es lineal, por lo que se debe linealizar
+ por el Jacobiano.
+ 
+\end_layout
+
+\begin_layout Subsection
+Controlador PID
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Imagenes/PID_wiki.png
+	lyxscale 50
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema en bloques del controlador PID.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Simulación
+\end_layout
+
+\begin_layout Section
+Implementación y resultados
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\end_body
+\end_document
