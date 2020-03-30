@@ -1,0 +1,550 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Ejercicio 2
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+Se pretende diseñar una convertidor Buck DC-DC con las siguientes característica
+s:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{in}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\Delta V_{omáx}}{V_{o}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{sw}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.7(V)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $9(V)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.05$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50(kHz)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se desprende directamente de la tabla que 
+\begin_inset Formula $\Delta V_{o}=185(mV)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se muestra el esquema del circuito planteado por la cátedra, al cual se
+ le deberán fijar los valores de los componentes apropiados para que cumpla
+ con las especificaciones dadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej2_circuito.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conversor Buck 9(V)-3.7(V)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sobre este circuito, se tienen en cuenta las siguientes consideraciones:
+\end_layout
+
+\begin_layout Itemize
+El valor de la inductancia es fijo, con 
+\begin_inset Formula $L=220(\mu H)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Consideramos un switch ideal durante esta sección.
+\end_layout
+
+\begin_layout Subsection
+Análisis teórico
+\end_layout
+
+\begin_layout Subsubsection
+Elección de componentes
+\end_layout
+
+\begin_layout Standard
+Dado que la relación 
+\begin_inset Formula $\frac{V_{o}}{V_{d}}=D$
+\end_inset
+
+, donde 
+\begin_inset Formula $D$
+\end_inset
+
+ es el duty cycle de la señal cuadrada con la que se conmuta la llave, deducimos
+ que, según la teoría, 
+\begin_inset Formula $D=0.411$
+\end_inset
+
+ para que se cumplan las especificaciones.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, la variación de corriente en la bobina en estado estacionario
+ está dada por:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\frac{V_{d}\cdot D\cdot(1-D)}{L\cdot f_{s}}=\Delta I_{L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo ya todos estos datos disponibles, obtenemos 
+\begin_inset Formula $\Delta I_{L}=200(mA)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos definir a su vez a la corriente de salida del circuito 
+\begin_inset Formula $I_{o}$
+\end_inset
+
+, dada una carga de un cierto valor 
+\begin_inset Formula $R$
+\end_inset
+
+, en función de la corriente de 
+\begin_inset Formula $\Delta I_{L}$
+\end_inset
+
+ como
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\Delta I_{L}=I_{o}\cdot K$
+\end_inset
+
+, donde 
+\begin_inset Formula $0\leq K\leq1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se calcula el valor de la capacitor a partir de la siguiente ecuación:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $C=\frac{\Delta I_{L}}{8\cdot f_{s}\cdot\Delta V_{o}}=2.7(\mu F)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para asegurarse que el filtro LC cumpla la función de integrador, asegurando
+ el valor medio (DC) de la tensión de la bobina a la salida, tenemos que
+ verificar que la frecuencia de corte 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ sea tal que 
+\begin_inset Formula $f_{c}<\frac{f_{s}}{10}=5(kHz)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vemos que con este valor de capacitancia 
+\begin_inset Formula $f_{c}=41(kHz)>>5(kHz)$
+\end_inset
+
+, por lo que en principio esto no se cumpliría.
+\end_layout
+
+\begin_layout Standard
+De aquí, tenemos dos opciones:
+\end_layout
+
+\begin_layout Enumerate
+Dejar el valor del capacitor fijo en 
+\begin_inset Formula $2.7(\mu F)$
+\end_inset
+
+ y aceptar el ripple del 5%
+\end_layout
+
+\begin_layout Enumerate
+Aumentar el valor de capacitancia de forma tal de disminuir 
+\begin_inset Formula $f_{c}$
+\end_inset
+
+ y 
+\begin_inset Formula $\Delta V_{o}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para que se cumpla la desigualdad 
+\begin_inset Formula $f_{c}<\frac{f_{s}}{10}$
+\end_inset
+
+, el valor límite del capacitor es 
+\begin_inset Formula $C=182(\mu F)$
+\end_inset
+
+, con un ripple asociado 
+\begin_inset Formula $\Delta V_{o}=2.8(mV)$
+\end_inset
+
+, de forma tal que 
+\begin_inset Formula $\frac{\Delta V_{o}}{V_{o}}(\%)=0.07\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podemos elegir también un valor intermedio para darse margen con respecto
+ al 5%.
+\end_layout
+
+\begin_layout Standard
+De esta manera sabemos que a la salida tendremos un valor de continua que
+ garantice el ripple máximo indicado.
+\end_layout
+
+\begin_layout Standard
+Nos preguntamos ahora sobre el valor de la carga para que esto se cumpla.
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $I_{o}=\frac{V_{o}}{R}$
+\end_inset
+
+, podemos definir ahora el valor de R en función de la corriente de salida.
+\end_layout
+
+\begin_layout Standard
+Si fijamos 
+\begin_inset Formula $K=0.5$
+\end_inset
+
+, entonces 
+\begin_inset Formula $I_{o}=0.5(A)$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $R=7.4(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De esta manera quedan definidos el valor de todos los componentes del circuito,
+ al menos de forma teórica y teniendo en cuenta un switch ideal.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de las señales dentro del circuito
+\end_layout
+
+\begin_layout Standard
+Se realiza un análisis en detalle de la forma de las señales dentro del
+ circuito a modo de comprenderlo en mayor detalle.
+ Este análisis es realizado teniendo en cuenta un diodo real y en estado
+ estacionario.
+\end_layout
+
+\begin_layout Paragraph
+El diodo real
+\end_layout
+
+\begin_layout Standard
+Se muestra la curva del diodo real:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva del diodo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En contraste con la curva del diodo ideal, en el cual se conduce o no se
+ conduce, una suerte de prendido o apagado, el diodo real tiene una curva
+ exponencial a medida que crece la tensión y un suave aumento de la corriente
+ cuando el mismo se encuentra en inversa.
+\end_layout
+
+\begin_layout Standard
+Esto caracterizará al resto de las curvas cuando se hace un análisis teórico
+ de las mismas.
+\end_layout
+
+\begin_layout Paragraph
+El inductor
+\end_layout
+
+\begin_layout Standard
+En estado estacionario con la llave está cerrada, 
+\end_layout
+
+\begin_layout Paragraph
+El capacitor
+\end_layout
+
+\begin_layout Paragraph
+Señal de disparo
+\end_layout
+
+\end_body
+\end_document
