@@ -243,7 +243,7 @@ Tensión en el inductor
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -253,7 +253,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulación tensión en el inductor
+Simulación tensión del induc
 \end_layout
 
 \end_inset

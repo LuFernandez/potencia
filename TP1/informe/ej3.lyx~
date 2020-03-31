@@ -79,5 +79,63 @@
 Ejercicio 3
 \end_layout
 
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+En este apartado del trabajo se recreará el circuito propuesto en el punto
+ anterior, cambiando el switch ideal por un transistor FET que se encenderá
+ y apagará con un totem-pole como se propuso en el primer ejercicio de este
+ enunciado.
+ Se buscarán diferencias en el funcionamiento, y de haberlas, se tratará
+ de entender la razón de ellos como también proponer soluciones para evitar
+ estos errores.
+ 
+\end_layout
+
+\begin_layout Standard
+El circuito que se utilizará para estos ensayos es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conversor Buck 9(V)-3.7(V) con transistor FET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis del circuito
+\end_layout
+
+\begin_layout Subsubsection
+Primer diseño
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document

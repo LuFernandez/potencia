@@ -494,6 +494,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -536,12 +540,7 @@ Con la llave cerrada, el diodo consumirá corriente inversa suficiente para
 \end_layout
 
 \begin_layout Standard
-A continuación se muestran las curvas de la corriente y tensión del diodo
- en función del tiempo 
-\begin_inset Formula $T_{s}=T_{on}\text{+}T_{off}$
-\end_inset
-
-
+A continuación se muestran las curvas
 \end_layout
 
 \begin_layout Paragraph
@@ -693,6 +692,10 @@ placement H
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
