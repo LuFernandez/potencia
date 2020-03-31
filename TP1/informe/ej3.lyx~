@@ -28,7 +28,9 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +46,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -76,7 +79,7 @@
 \begin_body
 
 \begin_layout Section
-Ejercicio 3
+Ejercicio 3(HACER TODOS LOS GRAFICOS DEVUELTA CON 10uF)
 \end_layout
 
 \begin_layout Subsection
@@ -103,6 +106,17 @@ El circuito que se utilizará para estos ensayos es el siguiente:
 wide false
 sideways false
 status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_circ.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -134,7 +148,303 @@ Primer diseño
 \end_layout
 
 \begin_layout Standard
+En este primer diseño se utilizaran los componentes propuestos en el ejercicio
+ 2.
+\end_layout
 
+\begin_layout Paragraph
+Señal de disparo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_disp.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de disparo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La señal de disparo ya no representa un pulso ideal como en el punto anterior.
+ Debido a los transistores en configuración totem-pole, la señal no puede
+ llegar ni a 0V ni a 9V.
+ Sin embargo el duty y periodo es igual al calculado en el punto anterior,
+ así que ninguna de estas particularidades debería representar un cambio
+ en el funcionamiento del circuito.
+\end_layout
+
+\begin_layout Paragraph
+Corriente en el inductor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_corrind.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación corriente en el inductor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La corriente en el inductor presenta un comportamiento muy similar a lo
+ presentado en el ejercicio anterior.
+ Se puede observar que el valor medio de esta corriente converge a un valor
+ menor.
+\end_layout
+
+\begin_layout Paragraph
+Tensión en el inductor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_tenind.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación tensión en el inductor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se observa una tensión oscilatoria correspondiente con el funcionamiento
+ transitorio de este circuito.
+\end_layout
+
+\begin_layout Paragraph
+Corriente en el diodo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_corrdiodov2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación corriente en el diodo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El comportamiento que se observa es muy similar al comportamiento del ejercicio
+ 2.
+\end_layout
+
+\begin_layout Paragraph
+tensión de salida
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_outv2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de salida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien la forma de señal y velocidad de convergencia es igual a lo visto
+ en el punto anterior, su valor de convergencia(3,3V) es menor a los esperado
+ (3,7V) que fue para lo que se diseñó este circuito.
+ Por lo tanto no se cumple la relación 
+\begin_inset Formula $\frac{V_{o}}{V_{d}}=D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Segundo diseño
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_out2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de salida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este segundo diseño, se buscó el Duty que satisfaga la consigna.
+ Esto se logró iterando el valor del duty de la señal de disparo y observando
+ la variación en la tensión de salida, en una suerte de sistema realimentado
+ manualmente.
+ 
+\end_layout
+
+\begin_layout Standard
+El Duty necesario para obtener 3,7V en la salida fue de 45,5% una diferencia
+ del 4,4% con el calculado en el punto anterior.
 \end_layout
 
 \end_body

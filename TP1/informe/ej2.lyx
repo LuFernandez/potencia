@@ -427,6 +427,11 @@ Para que se cumpla la desigualdad
 \begin_layout Standard
 Podemos elegir también un valor intermedio para darse margen con respecto
  al 5%.
+ Decidimos utilizar un capacitor de 
+\begin_inset Formula $C=10(\mu F)$
+\end_inset
+
+, ya que es un valor comercial entre los dos límites calculados.
 \end_layout
 
 \begin_layout Standard

@@ -427,6 +427,11 @@ Para que se cumpla la desigualdad
 \begin_layout Standard
 Podemos elegir también un valor intermedio para darse margen con respecto
  al 5%.
+ Decidimos utilizar un capacitor de 
+\begin_inset Formula $C=100(\mu F)$
+\end_inset
+
+, ya que es un valor comercial entre los dos límites calculados.
 \end_layout
 
 \begin_layout Standard
@@ -530,20 +535,284 @@ Esto caracterizará al resto de las curvas cuando se hace un análisis teórico
  de las mismas.
 \end_layout
 
+\begin_layout Standard
+Con la llave cerrada, el diodo consumirá corriente inversa suficiente para
+ mantener los 
+\begin_inset Formula $V_{d}$
+\end_inset
+
+ volts impuestos por la fuente.
+\end_layout
+
+\begin_layout Standard
+A continuación se muestran las curvas
+\end_layout
+
 \begin_layout Paragraph
 El inductor
 \end_layout
 
 \begin_layout Standard
-En estado estacionario con la llave está cerrada, 
+En estado estacionario con la llave está cerrada, se espera que la tensión
+ de entrada sea 
+\begin_inset Formula $V_{o}=3.7(V)$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $V_{d}=9(V)$
+\end_inset
+
+, la bobina tendrá una tensión 
+\begin_inset Formula $V_{L}=V_{d}-V_{o}=5.3(V)$
+\end_inset
+
+ constante.
+\end_layout
+
+\begin_layout Standard
+Como la tensión de la misma se espera que sea constante, la derivada de
+ la corriente que circula por ella 
+\begin_inset Formula $i_{L}$
+\end_inset
+
+ también lo será, ya que 
+\begin_inset Formula $V_{L}=\frac{di_{L}}{dt}\cdot L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esto hace que 
+\begin_inset Formula $K_{o}=\frac{di_{L}}{dt}$
+\end_inset
+
+, por lo que 
+\begin_inset Formula $i_{L}=K_{o}\cdot t+I_{oL}$
+\end_inset
+
+, con 
+\begin_inset Formula $I_{oL}$
+\end_inset
+
+ otra constante que representa el valor de continua de corriente en la bobina.
+ Notemos que la corriente en el momento en que la llave está cerrada será
+ creciente, ya que la derivada es positiva.
+\end_layout
+
+\begin_layout Standard
+Cuando la llave está abierta, la tensión de la bobina será ahora 
+\begin_inset Formula $V_{L}=V_{diodo}-V_{o}$
+\end_inset
+
+, ya que consideramos al diodo no real.
+ 
+\begin_inset Formula $V_{diodo}$
+\end_inset
+
+ en este caso será la tensión del diodo en directa, que puede aproximarse
+ como constante en la región de corriente cercana 
+\begin_inset Formula $I_{oL}$
+\end_inset
+
+ y dependerá del diodo elegido.
+ Es importante mencionar que cuanto más grande sea 
+\begin_inset Formula $\Delta I_{L}$
+\end_inset
+
+, más podrá variar la tensión 
+\begin_inset Formula $V_{diodo}$
+\end_inset
+
+ entre llave apagada y prendida.
+ Si tomamos 
+\begin_inset Formula $V_{diodo}=-0.7(V)$
+\end_inset
+
+, entonces 
+\begin_inset Formula $V_{L}=-4.4(V)$
+\end_inset
+
+ con la llave abierta.
+\end_layout
+
+\begin_layout Standard
+Si aproximamos a 
+\begin_inset Formula $V_{L}$
+\end_inset
+
+ como constante, bajo el mismo razonamiento utilizado con la llave cerrada,
+ la corriente 
+\begin_inset Formula $i_{L}$
+\end_inset
+
+ será entonces una lineal, 
+\begin_inset Formula $i_{L}=-K_{1}\cdot t+I_{oL}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podemos calcular ahora 
+\begin_inset Formula $K_{o}$
+\end_inset
+
+ y 
+\begin_inset Formula $K_{1}$
+\end_inset
+
+ a partir de los tiempos de prendido y apagado y de 
+\begin_inset Formula $\Delta I_{L}$
+\end_inset
+
+.
+ Es así como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $K_{o}=\frac{\Delta I_{L}}{T_{on}}=24.4\cdot10^{3}$
+\end_inset
+
+ y 
+\begin_inset Formula $K_{1}=\frac{\Delta I_{L}}{T_{off}}=17\cdot10^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se grafica ahora la curva teórica con la simulada superpuesta para la curva
+ del inductor en un período entero de tiempo 
+\begin_inset Formula $T_{s}=\frac{1}{f_{s}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas del inductor teóricas y simuladas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
 El capacitor
 \end_layout
 
+\begin_layout Standard
+Como la corriente en la bobina es creciente durante el tiempo en que la
+ llave está cerrada, el capacitor se estará cargando, por lo que la corriente
+ que circulará en el capacitor en este caso de mantendrá constante.
+ En este caso la tensión del capacitor será la que aumente linealmente con
+ el tiempo respondiendo a la ecuación 
+\begin_inset Formula $i=\frac{dV}{dt}\cdot C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Se muestra a continuación las curvas del capacitor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curvas del capacitor teóricas y simuladas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Señal de disparo
+\end_layout
+
+\begin_layout Standard
+La señal de disparo es una cuadrada con duty cicle 
+\begin_inset Formula $D=0.411$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cuadrada teórica y simulada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
