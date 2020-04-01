@@ -1,0 +1,25 @@
+Questionable use of curly braces in ".model uf4007 d (ikf=.15 n=2 is=100n rs=0.03 eg=1.11 xti=3 cjo=2.92655e-011 vj=0.851862 m=0.334552 fc=0.5 tt={tt=1.84973e-007} bv=1000 ibv=0.2 kf=0 af=1 iave=1000m vpk=800 mfg=gp1000v1a type=silicon)"
+    Error: undefined symbol in: "[tt]=1.84973e-007"
+Circuit: * C:\ITBA\10 Cuatrimestre\Electrónica de Potencia\Trabajos Practicos\potencia\TP1\simulaciones\ej2.asc
+
+Limiting rise time of source v§pwm to 8.2e-007
+Limiting fall time of source v§pwm to 8.2e-007
+Direct Newton iteration for .op point succeeded.
+
+Date: Mon Mar 30 13:18:25 2020
+Total elapsed time: 14.919 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1924573
+traniter = 1924567
+tranpoints = 934035
+accept = 922836
+rejected = 11199
+matrix size = 7
+fillins = 1
+solver = Normal
+Matrix Compiler1: 250 bytes object code size  0.1/0.1/[0.1]
+Matrix Compiler2: 461 bytes object code size  0.1/0.2/[0.1]
+

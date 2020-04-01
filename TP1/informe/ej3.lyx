@@ -1,0 +1,600 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Ejercicio 3
+\end_layout
+
+\begin_layout Subsection
+Introducción
+\end_layout
+
+\begin_layout Standard
+En este apartado del trabajo se recreará el circuito propuesto en el punto
+ anterior, cambiando el switch ideal por un transistor FET que se encenderá
+ y apagará con un totem-pole como se propuso en el primer ejercicio de este
+ enunciado.
+ Se buscarán diferencias en el funcionamiento, y de haberlas, se tratará
+ de entender la razón de ellos como también proponer soluciones para evitar
+ estos errores.
+ 
+\end_layout
+
+\begin_layout Standard
+El circuito que se utilizará para estos ensayos es el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_circ.png
+	lyxscale 35
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conversor Buck 9(V)-3.7(V) con transistor FET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Análisis del circuito
+\end_layout
+
+\begin_layout Subsubsection
+Primer diseño
+\end_layout
+
+\begin_layout Standard
+En este primer diseño se utilizaran los componentes propuestos en el ejercicio
+ 2.
+\end_layout
+
+\begin_layout Paragraph
+Señal de disparo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_disp.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de disparo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La señal de disparo ya no representa un pulso ideal como en el punto anterior.
+ Debido a los transistores en configuración totem-pole, la señal no puede
+ llegar ni a 0V ni a 9V.
+ Sin embargo el duty y periodo es igual al calculado en el punto anterior,
+ así que ninguna de estas particularidades debería representar un cambio
+ en el funcionamiento del circuito.
+\end_layout
+
+\begin_layout Paragraph
+Corriente en el inductor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_corrind.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación corriente en el inductor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La corriente en el inductor presenta un comportamiento muy similar a lo
+ presentado en el ejercicio anterior.
+ Se puede observar que el valor medio de esta corriente converge a un valor
+ menor.
+\end_layout
+
+\begin_layout Paragraph
+Tensión en el inductor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_tenind.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación tensión en el inductor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se observa una tensión oscilatoria correspondiente con el funcionamiento
+ transitorio de este circuito.
+\end_layout
+
+\begin_layout Paragraph
+Corriente en el diodo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_corrdiodov2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulación corriente en el diodo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El comportamiento que se observa es muy similar al comportamiento del ejercicio
+ 2.
+\end_layout
+
+\begin_layout Paragraph
+tensión de salida
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_outv2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de salida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si bien la forma de señal y velocidad de convergencia es igual a lo visto
+ en el punto anterior, su valor de convergencia(3,3V) es menor a los esperado
+ (3,7V) que fue para lo que se diseñó este circuito.
+ Por lo tanto no se cumple la relación 
+\begin_inset Formula $\frac{V_{o}}{V_{d}}=D$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Segundo diseño
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_out2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de salida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este segundo diseño, se buscó el Duty que satisfaga la consigna.
+ Esto se logró iterando el valor del duty de la señal de disparo y observando
+ la variación en la tensión de salida, en una suerte de sistema realimentado
+ manualmente.
+ 
+\end_layout
+
+\begin_layout Standard
+El Duty necesario para obtener 3,7V en la salida fue de 45,5% una diferencia
+ del 4,4% con el calculado en el punto anterior.
+\end_layout
+
+\begin_layout Subsection
+Análisis de la diferencia de comportamiento
+\end_layout
+
+\begin_layout Standard
+Observando el esquema planteado en los dos ejercicios, se observa que circuitalm
+ente la única diferencia en sí es o un switch ideal o un transistor en corte
+ y saturación.
+ Por otro lado, respecto al funcionamiento, la mayor diferencia se encontró
+ en la tensión de salida ofrecida por el circuito.
+\end_layout
+
+\begin_layout Standard
+La tensión de salida del circuito es proporcional a la corriente que entrega
+ el inductor, a su vez, esa corriente es proporcional a la energía que entrega
+ la misma bobina.
+ Por lo tanto, una diferencia de tensión a la salida corresponde a una diferenci
+a de energía entregada a la resistencia por parte el inductor.
+ Volviendo a la diferencia circuital, se puede entender que esta pérdida
+ de energía se realiza en el transistor, en tiempo de conmutación entre
+ corte y saturación, momentos en donde puede disipar potencia.
+\end_layout
+
+\begin_layout Standard
+Se entiende entonces que al dejar de ser ideal el switch, existe una pérdida
+ de energía en la transición, esta pérdida de energía se ve reflejada en
+ la energía que entrega el inductor a la carga y finalmente, se observa
+ un valor de tensión menor al esperado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_potdis.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia disipada en el transistor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_potdi.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia disipada en una conmutación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En la realización de este trabajo se pudo observar las diferencias entre
+ un circuito de funcionamiento ideal con uno más acercado al funcionamiento
+ real.
+ Fue posible justificar estas diferencias tanto matemáticamente, como con
+ razonamiento y entendimiento del funcionamiento de circuito.
+ 
+\end_layout
+
+\begin_layout Standard
+Se evidenciaron factores críticos para la realización de este tipo de circuitos,
+ que en otras materias no eran tan cruciales.
+ También a calcular cómo estos factores afectarán al circuito, pudiendo
+ tenerlos en cuenta al momento del desarrollo de una placa de estas característi
+cas.
+\end_layout
+
+\begin_layout Standard
+Lamentablemente no pudimos realizar la placa en circuito, pero suponemos
+ que a los problemas surgidos en las simulaciones no ideales probablemente
+ se sumen otros tipos de conflictos propios de la realización de una placa
+ de electrónica de potencia.
+\end_layout
+
+\begin_layout Standard
+Finalmente, son muchos los factores que pueden afectar el funcionamiento
+ del circuito, y si bien se pueden tener en cuenta, entendemos que una realiment
+ación negativa sería muy útil para poder equilibrar la salida al valor esperado.
+ De esta manera se puede tener un mayor margen de error para los cálculos
+ requeridos para el desarrollo del sistema.
+ 
+\end_layout
+
+\end_body
+\end_document

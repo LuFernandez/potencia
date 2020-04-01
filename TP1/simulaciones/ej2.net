@@ -1,0 +1,14 @@
+* C:\ITBA\10 Cuatrimestre\Electrónica de Potencia\Trabajos Practicos\potencia\TP1\simulaciones\ej2.asc
+V§source N001 0 9
+L1 N001 N002 220µ
+C1 N002 N003 182µ
+R1 N002 N003 7.4
+V§pwm P001 0 PULSE(0 9 0 0 0 8.2u 20u 0)
+S1 N003 0 P001 0 MYSW
+D2 N003 N001 MUR460
+.model D D
+.lib C:\Users\Tomas\Documents\LTspiceXVII\lib\cmp\standard.dio
+.tran 0 0.009 0 10n
+.model MYSW SW(Ron=1 Roff=1Meg Vt=.5 Vh=-.4)
+.backanno
+.end
