@@ -29,9 +29,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -44,6 +45,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -55,6 +57,8 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\rightmargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -75,8 +79,829 @@
 
 \begin_body
 
-\begin_layout Standard
+\begin_layout Section
+Disparo de un transistor MOSFET
+\end_layout
 
+\begin_layout Subsection
+Cálculo tiempos de conmutación
+\end_layout
+
+\begin_layout Standard
+Se tiene el siguiente circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/schem.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito a analizar.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Para calcular los tiempos de conmutación del encendido y apagado de la fuente,
+ en primer lugar, se deben conocer ciertos valores.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Se sabe que la tensión máxima de la llave es de 
+\begin_inset Formula $50V$
+\end_inset
+
+ (
+\begin_inset Formula $V_{SW_{max}}=Vd=50V)$
+\end_inset
+
+ y que la corriente máxima de salida será 
+\begin_inset Formula $I_{o}=\frac{V_{SW_{max}}}{R_{g}}=\frac{1}{3}=333mA$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Otros valores relevantes que se obtienen de la datasheet del MOSFET IRF530
+ son la tensión de threshold 
+\begin_inset Formula $V_{gsth}=4V$
+\end_inset
+
+.
+ Además, de las figuras: de la función 
+\begin_inset Formula $I_{D}(V_{gs})$
+\end_inset
+
+ para la curva de 
+\begin_inset Formula $25°C$
+\end_inset
+
+ que la 
+\begin_inset Formula $V_{gsIo}=4.1V.$
+\end_inset
+
+ Y a su vez, los diferentes valores de capacitancias 
+\begin_inset Formula $C_{iss}=C_{gs}+C_{gd1}=650pF$
+\end_inset
+
+ y 
+\begin_inset Formula $C_{rss}=C_{gs}+C_{gd2}=1150pF$
+\end_inset
+
+ para el máximo valor de 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ (
+\begin_inset Formula $V_{ds}=50V)$
+\end_inset
+
+.
+ Por último, 
+\begin_inset Formula $\Delta Q$
+\end_inset
+
+ dado 
+\begin_inset Formula $V_{gsIo}=4.1V$
+\end_inset
+
+, ésto es 
+\begin_inset Formula $\Delta Q=5.5nC$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Para conveniencia se define también las constantes 
+\begin_inset Formula $\tau_{1}=R_{g}C_{iss}$
+\end_inset
+
+ y 
+\begin_inset Formula $\tau_{2}=R_{g}C_{rss}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Encendido
+\end_layout
+
+\begin_layout Standard
+El tiempo de encendido está compuesto por el tiempo de delay 
+\begin_inset Formula $t_{d}$
+\end_inset
+
+, el tiempo de rise de la corriente 
+\begin_inset Formula $t_{ri}$
+\end_inset
+
+, y el tiempo de fall de la tensión 
+\begin_inset Formula $t_{fv}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+El tiempo 
+\begin_inset Formula $t_{d}$
+\end_inset
+
+ es el aquel hasta que la tensión 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ alcanza 
+\begin_inset Formula $V_{gsth}$
+\end_inset
+
+, siendo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{d}=-\tau_{1}.ln(1-\frac{V_{gsth}}{V_{gg}})=2.0x10^{-8}s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculando el tiempo que tarda en llegar la tensión 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ a 
+\begin_inset Formula $V_{gsIo}$
+\end_inset
+
+, 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ se puede obtener el tiempo de rise de la corriente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{ri}=-\tau_{1}.ln(1-\frac{V_{gsIo}}{V_{gg}})-t_{d}=5.9x10-10s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación, sabemos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i_{g}=\frac{dQ_{C_{gd}}}{dt}=\frac{V_{gg}-V_{gsIo}}{R_{g}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y calculando 
+\begin_inset Formula $i_{g}$
+\end_inset
+
+, podemos calcular el tiempo de fall de la tensión 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ de la siguiente manera, con el valor de 
+\begin_inset Formula $\Delta Q=5.5nC$
+\end_inset
+
+, previamente mencionado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Delta t=t_{fv}=\frac{\Delta Q}{i_{g}}=5.1x10-8s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tiempo de encendido 
+\begin_inset Formula $T_{on}$
+\end_inset
+
+ está compuesto entonces por estos tres valores calculados, es decir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{on}=t_{d}+t_{ri}+t_{fv}=x+x+x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{on}=valor
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En las siguientes figuras se pueden observar las curvas de encendido para
+ 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/on teo 1.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Encendido para 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/on teo 2.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Encendido para 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Apagado
+\end_layout
+
+\begin_layout Standard
+En el caso del apagado del transistor, está compuesto por el tiempo de delay
+ de apagado 
+\begin_inset Formula $t_{doff}$
+\end_inset
+
+, el tiempo de rise de la tensión 
+\begin_inset Formula $t_{rv}$
+\end_inset
+
+, y el tiempo de fall de la corriente 
+\begin_inset Formula $t_{fi}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este caso, el 
+\begin_inset Formula $t_{doff}$
+\end_inset
+
+ es el tiempo que tarda la tensión 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ en disminuir de 
+\begin_inset Formula $V_{gg}$
+\end_inset
+
+ a 
+\begin_inset Formula $V_{gsIo}$
+\end_inset
+
+.
+ Esto es,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{doff}=-\tau_{2}.ln(\frac{V_{gsIo}}{V_{gg}})=1.5x10.7s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tiempo de rise de la tensión 
+\begin_inset Formula $V_{d}$
+\end_inset
+
+ desde 
+\begin_inset Formula $0V$
+\end_inset
+
+ hasta 
+\begin_inset Formula $V_{sw_{max}}$
+\end_inset
+
+ se calcula de manera análoga a 
+\begin_inset Formula $t_{fv}$
+\end_inset
+
+ para el caso del encendido.
+ Será entonces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{rv}=\frac{\Delta Q}{i_{g}}=\frac{\Delta Q}{\frac{V_{gsIo}}{Rg}}=1.34x10-7s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El apagado finaliza cuando la tensión de 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ llega a la tensión de threshold:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{fi}=-\tau_{1}.ln(\frac{V_{gsth}}{V_{gsIo}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tiempo de apagado 
+\begin_inset Formula $T_{off}$
+\end_inset
+
+ está compuesto entonces por estos tres valores calculados, es decir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{off}=t_{doff}+t_{rv}+t_{fi}=x+x+x
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{off}=valor
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En las siguientes figuras se pueden observar las curvas de apagado para
+ 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+, 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/on teo 1.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Apagado para 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/off teo 2.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Apagado para 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Simulaciones y resultados
+\end_layout
+
+\begin_layout Standard
+El circuito en cuestión fue simulado, y se superpusieron las curvas simuladas
+ y teóricas tanto para el encendido como para el apagado.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Encendido
+\end_layout
+
+\begin_layout Standard
+La curva de encendido se muestra a continuación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/on vgs vs ig.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de encendido para 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+, simulación y teoría.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+paver
+\end_layout
+
+\begin_layout Standard
+la diferencia entre ig teo vs sim se debe a que no esta previamente cargado
+\end_layout
+
+\begin_layout Standard
+con un valor mas chico de L se ve la meseta
+\end_layout
+
+\begin_layout Standard
+encendido:
+\end_layout
+
+\begin_layout Standard
+td=2.07x10-8
+\end_layout
+
+\begin_layout Standard
+tri=5.93x10-10
+\end_layout
+
+\begin_layout Standard
+tfv=5.05x10-8
+\end_layout
+
+\begin_layout Standard
+apagado:
+\end_layout
+
+\begin_layout Standard
+tdoff=1.5x10-7
+\end_layout
+
+\begin_layout Standard
+trv=1.34x10-7
+\end_layout
+
+\begin_layout Standard
+tfi=1.6x10-9
 \end_layout
 
 \end_body
