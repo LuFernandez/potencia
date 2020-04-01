@@ -79,7 +79,7 @@
 \begin_body
 
 \begin_layout Section
-Ejercicio 3(HACER TODOS LOS GRAFICOS DEVUELTA CON 10uF)
+Ejercicio 3
 \end_layout
 
 \begin_layout Subsection
@@ -105,12 +105,13 @@ El circuito que se utilizará para estos ensayos es el siguiente:
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/ej3_circ.png
+	lyxscale 35
 	scale 35
 
 \end_inset
@@ -130,10 +131,13 @@ Conversor Buck 9(V)-3.7(V) con transistor FET
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -452,7 +456,144 @@ Análisis de la diferencia de comportamiento
 \end_layout
 
 \begin_layout Standard
+Observando el esquema planteado en los dos ejercicios, se observa que circuitalm
+ente la única diferencia en sí es o un switch ideal o un transistor en corte
+ y saturación.
+ Por otro lado, respecto al funcionamiento, la mayor diferencia se encontró
+ en la tensión de salida ofrecida por el circuito.
+\end_layout
 
+\begin_layout Standard
+La tensión de salida del circuito es proporcional a la corriente que entrega
+ el inductor, a su vez, esa corriente es proporcional a la energía que entrega
+ la misma bobina.
+ Por lo tanto, una diferencia de tensión a la salida corresponde a una diferenci
+a de energía entregada a la resistencia por parte el inductor.
+ Volviendo a la diferencia circuital, se puede entender que esta pérdida
+ de energía se realiza en el transistor, en tiempo de conmutación entre
+ corte y saturación, momentos en donde puede disipar potencia.
+\end_layout
+
+\begin_layout Standard
+Se entiende entonces que al dejar de ser ideal el switch, existe una pérdida
+ de energía en la transición, esta pérdida de energía se ve reflejada en
+ la energía que entrega el inductor a la carga y finalmente, se observa
+ un valor de tensión menor al esperado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_potdis.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia disipada en el transistor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_potdi.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia disipada en una conmutación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En la realización de este trabajo se pudo observar las diferencias entre
+ un circuito de funcionamiento ideal con uno más acercado al funcionamiento
+ real.
+ Fue posible justificar estas diferencias tanto matemáticamente, como con
+ razonamiento y entendimiento del funcionamiento de circuito.
+ 
+\end_layout
+
+\begin_layout Standard
+Se evidenciaron factores críticos para la realización de este tipo de circuitos,
+ que en otras materias no eran tan cruciales.
+ También a calcular cómo estos factores afectarán al circuito, pudiendo
+ tenerlos en cuenta al momento del desarrollo de una placa de estas característi
+cas.
+\end_layout
+
+\begin_layout Standard
+Lamentablemente no pudimos realizar la placa en circuito, pero suponemos
+ que a los problemas surgidos en las simulaciones no ideales probablemente
+ se sumen otros tipos de conflictos propios de la realización de una placa
+ de electrónica de potencia.
+\end_layout
+
+\begin_layout Standard
+Finalmente, son muchos los factores que pueden afectar el funcionamiento
+ del circuito, y si bien se pueden tener en cuenta, entendemos que una realiment
+ación negativa sería muy útil para poder equilibrar la salida al valor esperado.
+ De esta manera se puede tener un mayor margen de error para los cálculos
+ requeridos para el desarrollo del sistema.
+ 
 \end_layout
 
 \end_body
