@@ -139,7 +139,12 @@ Para calcular los tiempos de conmutación del encendido y apagado de la fuente,
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Se sabe que la tensión máxima de la llave es de 
+Se utilizó un valor de 
+\begin_inset Formula $V_{gg}=15V$
+\end_inset
+
+.
+ Se sabe que la tensión máxima de la llave es de 
 \begin_inset Formula $50V$
 \end_inset
 
@@ -845,6 +850,168 @@ Curva de encendido para
 
  e 
 \begin_inset Formula $I_{g}$
+\end_inset
+
+, simulación y teoría.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/on vd vs id.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de encendido para 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+, simulación y teoría.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A simple vista se observa que las formas de las curvas entre simulación
+ y teoría coinciden, pero no así los tiempos de conmutación entre simulación
+ y teoría.
+ Esto se debe a que el LTSpice, los componentes tienen características reales,
+ que hacen que difiera del modelo teórico ideal, por ejemplo, la caída del
+ tensión que acontece en el diodo, la capacitancia del modelo equivalente
+ del inductor, y las características propias del transistor de potencia.
+\end_layout
+
+\begin_layout Standard
+La única forma que no coincide es la 
+\begin_inset Formula $I_{d}$
+\end_inset
+
+, ya que se observa un sobrepico de corriente que finalmente se estabiliza
+ en 
+\begin_inset Formula $I_{o}=0.333A$
+\end_inset
+
+, como se ve en las siguientes curvas para el apagado.
+ Esto ocurre debido a que la bobina se opone frente al cambio brusco de
+ la corriente que circula por ella y ésta se va incrementando lentamente.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Apagado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/off vgs vs ig.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de apagado para 
+\begin_inset Formula $V_{gs}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{g}$
+\end_inset
+
+, simulación y teoría.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ej1/off vd vs id.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de apagado para 
+\begin_inset Formula $V_{ds}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{d}$
 \end_inset
 
 , simulación y teoría.
