@@ -657,13 +657,24 @@ Potencia disipada en el transistor
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_con1.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/ej3_con2.png
-	scale 50
+	scale 35
 
 \end_inset
 
@@ -717,17 +728,12 @@ Luego se calculó la diferencia de potencia entregada a la resistencia con
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{(3.7V-3.2V)^{2}}{7.4\Omega}\backsimeq34mW
+\frac{(3.7V-3.2V)^{2}}{7.4\Omega}=
 \]
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Se puede confirmar que la potencia disipada en el transistor es casi igual
- a la potencia perdida en la resistencia.
 \end_layout
 
 \begin_layout Subsection

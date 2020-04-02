@@ -451,6 +451,139 @@ El Duty necesario para obtener 3,7V en la salida fue de 45,5% una diferencia
  del 4,4% con el calculado en el punto anterior.
 \end_layout
 
+\begin_layout Subsubsection
+Tercer diseño
+\end_layout
+
+\begin_layout Standard
+Para continuar con el análisis se decidió agregar resistencias de ESR a
+ los componentes reactivos, para así tener una respuesta más similar al
+ circuito real.
+ El valor utilizado para ESR fue de 
+\begin_inset Formula $15\varOmega$
+\end_inset
+
+, obtenido de datasheet de los componentes.
+\end_layout
+
+\begin_layout Standard
+El resultado en la tensión de salida fue el siguiente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_outesr.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión de salida considerando ESR
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar un gran aumento en el 
+\begin_inset Formula $\varDelta V_{o}$
+\end_inset
+
+, siendo esto mucho mayor a lo especificado para el diseño.
+ Por lo tanto se buscará aumentar el valor del capacitor, ya que esto disminuirá
+ el valor de 
+\begin_inset Formula $\varDelta V_{o}$
+\end_inset
+
+ como se explicó en el ejercicio anterior.
+ 
+\end_layout
+
+\begin_layout Standard
+Para aumentar el valor de capacitor, decidimos utilizar varios capacitores
+ desde la misma tecnología conectados en paralelo de esta manera no solo
+ aumentará el valor de capacitor, también disminuirá el valor de ESR del
+ capacitor total equivalente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_outesr2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión de salida con ESR corregido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para llegar hasta el 
+\begin_inset Formula $\varDelta V_{o}$
+\end_inset
+
+ deseado, fue necesario lograr un capacitor de 
+\begin_inset Formula $80\mu F$
+\end_inset
+
+ con ESR de 
+\begin_inset Formula $2\varOmega$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Análisis de la diferencia de comportamiento
 \end_layout
@@ -524,14 +657,24 @@ Potencia disipada en el transistor
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagenes/ej3_potdi.png
-	lyxscale 50
-	scale 50
+	filename imagenes/ej3_con1.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ej3_con2.png
+	scale 35
 
 \end_inset
 
@@ -557,6 +700,82 @@ Potencia disipada en una conmutación
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Para tener una confirmación matemática de esta idea, se decidió calcular
+ la potencia promedio disipada en el transistor.
+ Para esto se calculó el área debajo de la curva de potencia y se dividió
+ por el periodo de switching.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{5,38W*268\eta s}{2}.\frac{1}{20\mu s}\backsimeq36mW
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego se calculó la diferencia de potencia entregada a la resistencia con
+ el switch ideal y con el transistor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{(3.7V-3.2V)^{2}}{7.4\Omega}\backsimeq34mW
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede confirmar que la potencia disipada en el transistor es casi igual
+ a la potencia perdida en la resistencia.
+\end_layout
+
+\begin_layout Subsection
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+En la realización de este trabajo se pudo observar las diferencias entre
+ un circuito de funcionamiento ideal con uno más acercado al funcionamiento
+ real.
+ Fue posible justificar estas diferencias tanto matemáticamente, como con
+ razonamiento y entendimiento del funcionamiento de circuito.
+ 
+\end_layout
+
+\begin_layout Standard
+Se evidenciaron factores críticos para la realización de este tipo de circuitos,
+ que en otras materias no eran tan cruciales.
+ También a calcular cómo estos factores afectarán al circuito, pudiendo
+ tenerlos en cuenta al momento del desarrollo de una placa de estas característi
+cas.
+\end_layout
+
+\begin_layout Standard
+Lamentablemente no pudimos realizar la placa en circuito, pero suponemos
+ que a los problemas surgidos en las simulaciones no ideales probablemente
+ se sumen otros tipos de conflictos propios de la realización de una placa
+ de electrónica de potencia.
+\end_layout
+
+\begin_layout Standard
+Finalmente, son muchos los factores que pueden afectar el funcionamiento
+ del circuito, y si bien se pueden tener en cuenta, entendemos que una realiment
+ación negativa sería muy útil para poder equilibrar la salida al valor esperado.
+ De esta manera se puede tener un mayor margen de error para los cálculos
+ requeridos para el desarrollo del sistema.
+ 
 \end_layout
 
 \end_body
