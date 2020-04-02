@@ -657,24 +657,13 @@ Potencia disipada en el transistor
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagenes/ej3_con1.png
-	scale 35
-
-\end_inset
-
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/ej3_con2.png
-	scale 35
+	scale 50
 
 \end_inset
 

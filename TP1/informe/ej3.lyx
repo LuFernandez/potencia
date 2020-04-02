@@ -701,7 +701,7 @@ Para tener una confirmación matemática de esta idea, se decidió calcular
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{5,38W*268\eta s}{2}.\frac{1}{20\mu s}\backsimeq36mW
+\frac{5,38W*268\eta s}{2}.\frac{1}{20\mu s}\backsimeq37mW
 \]
 
 \end_inset
@@ -717,7 +717,7 @@ Luego se calculó la diferencia de potencia entregada a la resistencia con
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\frac{(3.7V-3.2V)^{2}}{7.4\Omega}\backsimeq34mW
+\frac{3.7V^{2}-3.66V{}^{2}}{7.4\Omega}\backsimeq40mW
 \]
 
 \end_inset
