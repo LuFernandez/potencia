@@ -108,7 +108,7 @@ filename "ej1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "ej2.lyx"
+filename "ej2nuevo.lyx"
 
 \end_inset
 
