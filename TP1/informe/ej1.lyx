@@ -213,7 +213,7 @@ Otros valores relevantes que se obtienen de la datasheet del MOSFET IRF530
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Para conveniencia se define también las constantes 
+Para conveniencia se definen también las constantes 
 \begin_inset Formula $\tau_{1}=R_{g}C_{iss}$
 \end_inset
 
@@ -264,7 +264,7 @@ El tiempo
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{d}=-\tau_{1}.ln(1-\frac{V_{gsth}}{V_{gg}})=20ns
+t_{d}=-\tau_{1}.ln\left(1-\frac{V_{gsth}}{V_{gg}}\right)=20ns
 \]
 
 \end_inset
@@ -291,7 +291,7 @@ Calculando el tiempo que tarda en llegar la tensión
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{ri}=-\tau_{1}.ln(1-\frac{V_{gsIo}}{V_{gg}})-t_{d}=0.59ns
+t_{ri}=-\tau_{1}.ln\left(1-\frac{V_{gsIo}}{V_{gg}}\right)-t_{d}=0.59ns
 \]
 
 \end_inset
@@ -567,7 +567,7 @@ En este caso, el
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{doff}=-\tau_{2}.ln(\frac{V_{gsIo}}{V_{gg}})=150ns
+t_{doff}=-\tau_{2}.ln\left(\frac{V_{gsIo}}{V_{gg}}\right)=150ns
 \]
 
 \end_inset
@@ -618,7 +618,7 @@ El apagado finaliza cuando la tensión de
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{fi}=-\tau_{1}.ln(\frac{V_{gsth}}{V_{gsIo}})=1.6ns
+t_{fi}=-\tau_{1}.ln\left(\frac{V_{gsth}}{V_{gsIo}}\right)=1.6ns
 \]
 
 \end_inset
@@ -841,6 +841,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -863,9 +864,6 @@ Curva de encendido para
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -885,6 +883,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -913,7 +912,7 @@ Curva de encendido para
 A simple vista se observa que las formas de las curvas entre simulación
  y teoría coinciden, pero no así los tiempos de conmutación entre simulación
  y teoría.
- Esto se debe a que el LTSpice, los componentes tienen características reales,
+ Esto se debe a que en LTSpice, los componentes tienen características reales,
  que hacen que difiera del modelo teórico ideal, por ejemplo, la caída del
  tensión que acontece en el diodo, la capacitancia del modelo equivalente
  del inductor, y las características propias del transistor de potencia.
@@ -963,6 +962,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -985,9 +985,6 @@ Curva de apagado para
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1007,6 +1004,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout

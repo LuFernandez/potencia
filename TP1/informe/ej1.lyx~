@@ -213,7 +213,7 @@ Otros valores relevantes que se obtienen de la datasheet del MOSFET IRF530
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-Para conveniencia se define también las constantes 
+Para conveniencia se definen también las constantes 
 \begin_inset Formula $\tau_{1}=R_{g}C_{iss}$
 \end_inset
 
@@ -264,7 +264,7 @@ El tiempo
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{d}=-\tau_{1}.ln(1-\frac{V_{gsth}}{V_{gg}})=2.0x10^{-8}s
+t_{d}=-\tau_{1}.ln\left(1-\frac{V_{gsth}}{V_{gg}}\right)=20ns
 \]
 
 \end_inset
@@ -291,7 +291,7 @@ Calculando el tiempo que tarda en llegar la tensión
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{ri}=-\tau_{1}.ln(1-\frac{V_{gsIo}}{V_{gg}})-t_{d}=5.9x10-10s
+t_{ri}=-\tau_{1}.ln\left(1-\frac{V_{gsIo}}{V_{gg}}\right)-t_{d}=0.59ns
 \]
 
 \end_inset
@@ -333,7 +333,7 @@ y calculando
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Delta t=t_{fv}=\frac{\Delta Q}{i_{g}}=5.1x10-8s
+\Delta t=t_{fv}=\frac{\Delta Q}{i_{g}}=51ns
 \]
 
 \end_inset
@@ -352,7 +352,7 @@ El tiempo de encendido
 \begin_layout Standard
 \begin_inset Formula 
 \[
-T_{on}=t_{d}+t_{ri}+t_{fv}=x+x+x
+T_{on}=t_{d}+t_{ri}+t_{fv}=20ns+.59ns+51ns
 \]
 
 \end_inset
@@ -363,7 +363,7 @@ T_{on}=t_{d}+t_{ri}+t_{fv}=x+x+x
 \begin_layout Standard
 \begin_inset Formula 
 \[
-T_{on}=valor
+T_{on}=71.59ns
 \]
 
 \end_inset
@@ -567,7 +567,7 @@ En este caso, el
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{doff}=-\tau_{2}.ln(\frac{V_{gsIo}}{V_{gg}})=1.5x10.7s
+t_{doff}=-\tau_{2}.ln\left(\frac{V_{gsIo}}{V_{gg}}\right)=150ns
 \]
 
 \end_inset
@@ -599,7 +599,7 @@ El tiempo de rise de la tensión
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{rv}=\frac{\Delta Q}{i_{g}}=\frac{\Delta Q}{\frac{V_{gsIo}}{Rg}}=1.34x10-7s
+t_{rv}=\frac{\Delta Q}{i_{g}}=\frac{\Delta Q}{\frac{V_{gsIo}}{Rg}}=134ns
 \]
 
 \end_inset
@@ -618,7 +618,7 @@ El apagado finaliza cuando la tensión de
 \begin_layout Standard
 \begin_inset Formula 
 \[
-t_{fi}=-\tau_{1}.ln(\frac{V_{gsth}}{V_{gsIo}})
+t_{fi}=-\tau_{1}.ln\left(\frac{V_{gsth}}{V_{gsIo}}\right)=1.6ns
 \]
 
 \end_inset
@@ -637,7 +637,7 @@ El tiempo de apagado
 \begin_layout Standard
 \begin_inset Formula 
 \[
-T_{off}=t_{doff}+t_{rv}+t_{fi}=x+x+x
+T_{off}=t_{doff}+t_{rv}+t_{fi}=150ns+134ns+1.6ns
 \]
 
 \end_inset
@@ -648,7 +648,7 @@ T_{off}=t_{doff}+t_{rv}+t_{fi}=x+x+x
 \begin_layout Standard
 \begin_inset Formula 
 \[
-T_{off}=valor
+T_{off}=285.6ns
 \]
 
 \end_inset
@@ -841,6 +841,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -885,6 +886,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -913,7 +915,7 @@ Curva de encendido para
 A simple vista se observa que las formas de las curvas entre simulación
  y teoría coinciden, pero no así los tiempos de conmutación entre simulación
  y teoría.
- Esto se debe a que el LTSpice, los componentes tienen características reales,
+ Esto se debe a que en LTSpice, los componentes tienen características reales,
  que hacen que difiera del modelo teórico ideal, por ejemplo, la caída del
  tensión que acontece en el diodo, la capacitancia del modelo equivalente
  del inductor, y las características propias del transistor de potencia.
@@ -940,6 +942,10 @@ Apagado
 \end_layout
 
 \begin_layout Standard
+A continuación se presentan las curvas de apagado:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -959,6 +965,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1003,6 +1010,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1024,51 +1032,8 @@ Curva de apagado para
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Subsubsection
-paver
-\end_layout
-
-\begin_layout Standard
-la diferencia entre ig teo vs sim se debe a que no esta previamente cargado
-\end_layout
-
-\begin_layout Standard
-con un valor mas chico de L se ve la meseta
-\end_layout
-
-\begin_layout Standard
-encendido:
-\end_layout
-
-\begin_layout Standard
-td=2.07x10-8
-\end_layout
-
-\begin_layout Standard
-tri=5.93x10-10
-\end_layout
-
-\begin_layout Standard
-tfv=5.05x10-8
-\end_layout
-
-\begin_layout Standard
-apagado:
-\end_layout
-
-\begin_layout Standard
-tdoff=1.5x10-7
-\end_layout
-
-\begin_layout Standard
-trv=1.34x10-7
-\end_layout
-
-\begin_layout Standard
-tfi=1.6x10-9
+Las curvas simuladas son muy similares a las teóricas, salvaguardando la
+ diferencia entre los tiempos ya mencionada.
 \end_layout
 
 \end_body
