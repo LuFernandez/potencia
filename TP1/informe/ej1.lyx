@@ -58,7 +58,9 @@
 \color #008000
 \end_index
 \leftmargin 2cm
+\topmargin 2.5cm
 \rightmargin 2cm
+\bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -96,14 +98,14 @@ Se tiene el siguiente circuito:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename ej1/schem.PNG
 	lyxscale 50
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -397,11 +399,7 @@ En las siguientes figuras se pueden observar las curvas de encendido para
 placement H
 wide false
 sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -428,7 +426,7 @@ status open
 \begin_inset Graphics
 	filename ej1/on teo 1.png
 	lyxscale 50
-	scale 30
+	scale 25
 
 \end_inset
 
@@ -485,7 +483,7 @@ status open
 \begin_inset Graphics
 	filename ej1/on teo 2.png
 	lyxscale 50
-	scale 30
+	scale 25
 
 \end_inset
 
@@ -682,7 +680,7 @@ En las siguientes figuras se pueden observar las curvas de apagado para
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -709,7 +707,7 @@ status open
 \begin_inset Graphics
 	filename ej1/on teo 1.png
 	lyxscale 50
-	scale 30
+	scale 25
 
 \end_inset
 
@@ -766,7 +764,7 @@ status open
 \begin_inset Graphics
 	filename ej1/off teo 2.png
 	lyxscale 50
-	scale 30
+	scale 25
 
 \end_inset
 
@@ -830,10 +828,30 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename ej1/on vgs vs ig.png
 	lyxscale 50
-	scale 40
+	scale 25
 
 \end_inset
 
@@ -841,7 +859,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -864,10 +881,26 @@ Curva de encendido para
 \end_inset
 
 
-\begin_inset Float figure
-placement H
-wide false
-sideways false
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -875,7 +908,7 @@ status open
 \begin_inset Graphics
 	filename ej1/on vd vs id.png
 	lyxscale 50
-	scale 40
+	scale 25
 
 \end_inset
 
@@ -883,7 +916,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -896,6 +928,11 @@ Curva de encendido para
 \end_inset
 
 , simulación y teoría.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -951,10 +988,30 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename ej1/off vgs vs ig.png
 	lyxscale 50
-	scale 40
+	scale 25
 
 \end_inset
 
@@ -962,7 +1019,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -985,10 +1041,26 @@ Curva de apagado para
 \end_inset
 
 
-\begin_inset Float figure
-placement H
-wide false
-sideways false
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -996,7 +1068,7 @@ status open
 \begin_inset Graphics
 	filename ej1/off vd vs id.png
 	lyxscale 50
-	scale 40
+	scale 25
 
 \end_inset
 
@@ -1004,7 +1076,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1026,6 +1097,15 @@ Curva de apagado para
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Las curvas simuladas son muy similares a las teóricas, salvaguardando la
  diferencia entre los tiempos ya mencionada.
 \end_layout

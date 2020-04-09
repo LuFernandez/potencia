@@ -57,10 +57,10 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 25mm
-\topmargin 2.5cm
-\rightmargin 25mm
-\bottommargin 2.5cm
+\leftmargin 15mm
+\topmargin 2cm
+\rightmargin 15mm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -108,7 +108,7 @@ filename "ej1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "ej2.lyx"
+filename "ej2nuevo.lyx"
 
 \end_inset
 

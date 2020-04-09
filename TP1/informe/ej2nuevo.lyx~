@@ -726,22 +726,20 @@ Se grafica ahora la curva teórica con la simulada superpuesta para la curva
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename imagenes/CorrienteInductancia.png
-	width 7cm
-	height 4cm
+	scale 45
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename imagenes/TensionInductancia.png
-	width 7cm
-	height 4cm
+	scale 45
 
 \end_inset
 
