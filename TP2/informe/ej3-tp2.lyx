@@ -379,7 +379,7 @@ Durante este trabajo se estudió el circuito convertidor Boost y en particular
 Al igual que el trabajo anterior, se encontró una diferencia entre los Duty
  calculados reales y Duty ideales, sin embargo gracias a la compensación
  del lazo de realimentación negativo, esta diferencia entre el funcionamiento
- real e ideal no se vio reflejado en la tensión de salido, que se mantuvo
+ real e ideal no se vio reflejado en la tensión de salida, que se mantuvo
  estable en el valor deseado (esto no sucedió en el trabajo práctico anterior
  que no disponía de realimentación).
  

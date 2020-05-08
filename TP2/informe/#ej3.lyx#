@@ -95,22 +95,14 @@ ia de un sistema lineal de la forma (donde u es la entrada, y es la salida):
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-\dot{x}=A\cdot x+C\cdot u
-\]
-
+\begin_inset Formula $\dot{x}=A\cdot x+C\cdot u$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-y=B\cdot x
-\]
-
+\begin_inset Formula $y=B\cdot x$
 \end_inset
 
 
@@ -177,18 +169,156 @@ Se obtienen luego las expresiones de las matrices con la llave abierta:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-A_{off}=\left[\begin{array}{cc}
+\begin_inset Formula $A_{off}$
+\end_inset
+
+=
+\begin_inset Formula $\left[\begin{array}{cc}
 0 & -\frac{1}{L}\\
-\\
-\frac{1}{C} & -\frac{1}{CR}
-\end{array}\right],B_{off}=\left[\begin{array}{c}
-\frac{1}{L}\\
-0
-\end{array}\right],C_{off}=\left[\begin{array}{cc}
-0 & 1\end{array}\right]
-\]
+\frac{1}{C} & -\frac{1}{CR_{1}}
+\end{array}\right]$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-1}{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{1}{R\cdot C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+, 
+\begin_inset Formula $B_{off}=$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+, 
+\begin_inset Formula $C_{off}=$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -204,17 +334,153 @@ Las matrices promedio (
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-A_{m}=\left[\begin{array}{cc}
-0 & \frac{D-1}{L}\\
-\frac{1-D}{C} & -\frac{1}{CR}
-\end{array}\right],B_{m}=\left[\begin{array}{c}
-\frac{1}{L}\\
-0
-\end{array}\right],C_{m}=\left[\begin{array}{cc}
-0 & 1\end{array}\right]
-\]
+\begin_inset Formula $A_{m}$
+\end_inset
+
+
+\begin_inset Formula $=$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{D-1}{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1-D}{C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{-1}{R\cdot C}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+, 
+\begin_inset Formula $B_{m}=$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{L}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+, 
+\begin_inset Formula $C_{m}=$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -234,11 +500,7 @@ Resolviendo luego el sistema para estas matrices promedio se obtiene la
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\[
-\frac{V_{o}(s)}{D(s)}=\frac{V_{s}}{(1-D)^{2}}\frac{1-\frac{L}{R\cdot(1-D)^{2}}\cdot S}{\frac{L\cdot C}{(1-D)^{2}}\cdot S^{2}+\frac{L}{R(1-D)^{2}}\cdot S+1}
-\]
-
+\begin_inset Formula $\frac{V_{o}(s)}{D(s)}=\frac{V_{s}}{(1-D)^{2}}\frac{1-\frac{L}{R\cdot(1-D)^{2}}\cdot S}{\frac{L\cdot C}{(1-D)^{2}}\cdot S^{2}+\frac{L}{R(1-D)^{2}}\cdot S+1}$
 \end_inset
 
 
@@ -249,19 +511,11 @@ Obtenemos los polos y ceros de esta transferencia:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-Z=\frac{R(1-D)^{2}}{L}
-\]
-
+\begin_inset Formula $Z=\frac{R(1-D)^{2}}{L}$
 \end_inset
 
  y 
-\begin_inset Formula 
-\[
-P_{1}=P_{2}^{*}=-\psi\cdot\omega+\omega\cdot\sqrt{1-\psi^{2}}
-\]
-
+\begin_inset Formula $P_{1}=P_{2}^{*}=-\psi\cdot\omega+\omega\cdot\sqrt{1-\psi^{2}}$
 \end_inset
 
 
@@ -297,11 +551,11 @@ obtenemos los valores:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-Z=\frac{R(1-D)^{2}}{L}=7272,\,\,\,P_{1}=P_{2}^{*}=-45269352+45269352j
-\]
+\begin_inset Formula $Z=\frac{R(1-D)^{2}}{L}=7272$
+\end_inset
 
+, 
+\begin_inset Formula $P_{1}=P_{2}^{*}=-45269352+45269352j$
 \end_inset
 
 
@@ -316,11 +570,11 @@ Por otro lado, cuando la carga vale
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-Z=\frac{R(1-D)^{2}}{L}=4848,\,\,\,P_{1}=P_{2}^{*}=-67904028+67904028j
-\]
+\begin_inset Formula $Z=\frac{R(1-D)^{2}}{L}=4848$
+\end_inset
 
+, 
+\begin_inset Formula $P_{1}=P_{2}^{*}=-67904028+67904028j$
 \end_inset
 
 
@@ -338,11 +592,7 @@ Tomando la relación entre entrada y salida para un conversor boost podemos
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\[
-V_{i}=V_{o}\cdot(1-D_{ideal})
-\]
-
+\begin_inset Formula $V_{i}=V_{o}\cdot(1-D_{ideal})$
 \end_inset
 
 
@@ -350,11 +600,7 @@ V_{i}=V_{o}\cdot(1-D_{ideal})
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\[
-D_{ideal}=1-\frac{V_{i}}{V_{o}}
-\]
-
+\begin_inset Formula $D_{ideal}=1-\frac{V_{i}}{V_{o}}$
 \end_inset
 
 
@@ -362,11 +608,7 @@ D_{ideal}=1-\frac{V_{i}}{V_{o}}
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\[
-D_{ideal}=0.5
-\]
-
+\begin_inset Formula $D_{ideal}=0.5$
 \end_inset
 
 
@@ -489,11 +731,7 @@ Notamos del gráfico anterior que
 
 \begin_layout Standard
 \align center
-\begin_inset Formula 
-\[
-D_{real}(\%)=\frac{t_{off}-t_{on1}}{t_{on2}-t_{on1}}\cdot100=59.2\%
-\]
-
+\begin_inset Formula $D_{real}(\%)=\frac{t_{off}-t_{on1}}{t_{on2}-t_{on1}}\cdot100=59.2\%$
 \end_inset
 
 

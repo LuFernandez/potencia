@@ -28,6 +28,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize 10
 \spacing single
 \use_hyperref false
@@ -57,10 +58,10 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 15mm
-\topmargin 2cm
-\rightmargin 15mm
-\bottommargin 2cm
+\leftmargin 2mm
+\topmargin 2.5cm
+\rightmargin 2mm
+\bottommargin 2.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
