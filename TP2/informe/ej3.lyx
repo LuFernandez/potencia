@@ -686,6 +686,25 @@ obtenemos los valores:
 
 \end_layout
 
+\begin_layout Standard
+Por otro lado, cuando la carga vale 
+\begin_inset Formula $R\text{=}(10//20)(\Omega)$
+\end_inset
+
+, en el otro posible estado del sistema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=\frac{R(1-D)^{2}}{L}=4848$
+\end_inset
+
+, 
+\begin_inset Formula $P_{1}=P_{2}^{*}=-67904028+67904028j$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Duty Cycle
 \end_layout

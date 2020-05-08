@@ -686,6 +686,25 @@ obtenemos los valores:
 
 \end_layout
 
+\begin_layout Standard
+Por otro lado, cuando la carga vale 
+\begin_inset Formula $R\text{=}(10//20)(\Omega)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Z=\frac{R(1-D)^{2}}{L}=4848$
+\end_inset
+
+, 
+\begin_inset Formula $P_{1}=P_{2}^{*}=-67904028+67904028j$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Duty Cycle
 \end_layout
@@ -842,7 +861,7 @@ Notamos del gráfico anterior que
 
 \begin_layout Standard
 Notamos que 
-\begin_inset Formula $D_{real}<D_{ideal}$
+\begin_inset Formula $D_{real}>D_{ideal}$
 \end_inset
 
 .
@@ -854,6 +873,35 @@ Notamos que
 En este circuito de potencia, asumimos diodos ideales.
  Notamos que la caída real en el diodo no es cero volts, por lo que esto
  podría traer diferencias con lo esperado.
+\end_layout
+
+\begin_layout Subsubsection
+Análisis de la diferencia de Duty
+\end_layout
+
+\begin_layout Standard
+Observando el Duty real y el ideal, vemos una diferencia de 9% aproximadamente.
+ Esto se debe que al tomar los componentes de manera ideal se ignorar pérdidas
+ energéticas en el circuito.
+ Estas pérdidas vienen de la transición del transistor, en el momento en
+ que pasa de corte a saturación o de saturación a corte, que vemos una disipació
+n de potencia y por lo tanto una pérdida de energía.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el diodo usado tiene una caída de 1V, que es un 10% de la
+ Vi, si tenemos en cuenta esta caída de tensión el duty nos dará 
+\begin_inset Formula $D_{DiodoReal}=1-\frac{V_{i}-V_{D}}{V_{o}}=0,55$
+\end_inset
+
+ que se acerca al valor real simulado.
+\end_layout
+
+\begin_layout Standard
+Sumando estos inconvenientes, se puede entender una diferencia de 9% entre
+ los Duty calculados.
+ 
 \end_layout
 
 \end_body
