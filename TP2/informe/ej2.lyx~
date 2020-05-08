@@ -269,7 +269,7 @@ Finalmente el bloque sería el siguiente:
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -301,6 +301,23 @@ Bloque transferencia PWM
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Análisis de la transferencia
+\end_layout
+
+\begin_layout Standard
+Se observa un bloque de transferencia muy simple, ya que se trata básicamente
+ de un conversor lineal de tensión a duty.
+ Esta simpleza es muy útil ya que esta transferencia será la última del
+ bloque de realimentación, por lo tanto se busca no agregar singularidades
+ innecesarios que dificulten tanto el cálculo como la estabilidad del circuito
+ total.
+ Se trata de un pulso de ancho modulado por tensión, aprovechando que el
+ ancho de este pulso afecta la tensión de salida y que esta tensión se puede
+ acondicionar y realimentar al PWM.
+ 
 \end_layout
 
 \end_body
