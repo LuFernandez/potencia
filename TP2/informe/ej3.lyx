@@ -754,6 +754,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagenes/vout.PNG
 	scale 30
@@ -805,8 +806,10 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagenes/duty.PNG
+	lyxscale 5
 	scale 30
 
 \end_inset

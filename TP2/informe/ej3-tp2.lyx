@@ -1,0 +1,364 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection
+Tiempos de establecimiento al 5%
+\end_layout
+
+\begin_layout Standard
+A continuación se muestran los transitorios cuando se modifica el valor
+ de la carga a la salida.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Tomas/electro de pot/tp2/ts10k.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Tomas/electro de pot/tp2/ts10kup.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tiempos de establecimiento al 5% R6=10k
+\begin_inset Formula $\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La primer imagen describe como responde el circuito cuando disminuye la
+ carga.
+ Como consecuencia en primera instancia la tensión de salida se hace negativa
+ tal como se vio en la teoría de estabilidad de convertidores DC/DC.
+ Por otro lado cuando se aumenta la carga el transitorio toma valores positivos
+ de tensión.
+ Los valores para los tiempos de establecimiento(
+\begin_inset Formula $t_{e}$
+\end_inset
+
+) son 
+\begin_inset Formula $t_{e}=1.68ms$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{e}=1.73ms$
+\end_inset
+
+ respectivamente, la diferencia radica en que el pico máximo para el aumento
+ de carga es mayor por lo tanto demora más en establecerse.
+\end_layout
+
+\begin_layout Standard
+Se hizo lo mismo con dos valores distintos de R6.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ts1k.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/ts1kup.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tiempos de establecimiento al 5% R6=1k
+\begin_inset Formula $\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/ts22k.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/ts22kup.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tiempos de establecimiento al 5% R6=22k
+\begin_inset Formula $\varOmega$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde los tiempos son 
+\begin_inset Formula $t_{e}=1.18ms$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{e}=1.27ms$
+\end_inset
+
+ para llave cerrada y llave abierta respectivamente con 
+\begin_inset Formula $R6=1k$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{e}=2.67ms$
+\end_inset
+
+ y 
+\begin_inset Formula $t_{e}=3.62ms$
+\end_inset
+
+ con 
+\begin_inset Formula $R6=22k$
+\end_inset
+
+.
+ La resistencia R6 modifica el valor del cero puesto por el amplificador
+ de error que esta dado por 
+\begin_inset Formula $\frac{1}{2\pi RC}$
+\end_inset
+
+ en el SPD, a medida que el cero se acerca al origen aparecen más oscilaciones
+ en el transitorio y el tiempo de establecimiento es mayor.
+\end_layout
+
+\begin_layout Subsection
+Diagramas de Bode
+\end_layout
+
+\begin_layout Standard
+Se realizaron los diagramas de bode para los mismos valores propuestos de
+ R6.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/bode.png
+	lyxscale 70
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/pzmap.png
+	lyxscale 70
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramas de Bode y singularidades
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como el sistema tenía un par de polos complejos conjugados y un cero en
+ el eje real, el lugar de raices podía hacer inestable al sistema a partir
+ de determinada ganancia.
+ La resistencia R6 es un parametro para controlar la ganancia del sistema.
+\end_layout
+
+\begin_layout Standard
+En los gráficos se observa como a medida que aumenta la resistencia los
+ polos estan cada vez mas cerca del eje jw y que para el caso de 22k
+\begin_inset Formula $\varOmega$
+\end_inset
+
+ el sistema se vuelve inestable.
+ Esta es la razón por la cual los tiempos de establecimiento y picos de
+ tensión eran mayores en el transitorio.
+\end_layout
+
+\end_body
+\end_document
