@@ -81,15 +81,15 @@
 
 \begin_body
 
-\begin_layout Part
-- Inverter Monofásico - Medio Puente
-\end_layout
-
 \begin_layout Section
-MOS Gate Driver
+Inverter Monofásico - Medio Puente
 \end_layout
 
 \begin_layout Subsection
+MOS Gate Driver
+\end_layout
+
+\begin_layout Subsubsection
 Valor de 
 \begin_inset Formula $C_{BOOT}$
 \end_inset
@@ -98,7 +98,331 @@ Valor de
 \end_layout
 
 \begin_layout Standard
+Como se vio en la teoría, el valor de 
+\begin_inset Formula $C_{BOOT}$
+\end_inset
 
+ debe ser
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+C_{BOOT}\gg\frac{4Q_{G}+10nC}{V_{cc}-0.7V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+siendo 
+\begin_inset Formula $Q_{G}$
+\end_inset
+
+ la gate charge, y 
+\begin_inset Formula $V_{cc}=15V.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para obtener 
+\begin_inset Formula $Q_{G}$
+\end_inset
+
+ se observa el gráfico de la datasheet del MOS, 
+\begin_inset Formula $V_{GS}$
+\end_inset
+
+ en función de 
+\begin_inset Formula $Q_{G}$
+\end_inset
+
+, y se mide 
+\begin_inset Formula $V_{gsIo}$
+\end_inset
+
+ para el tiempo de encendido.
+ Observando el gráfico, entonces la gate charge es de 
+\begin_inset Formula $5nC$
+\end_inset
+
+ para un valor de 
+\begin_inset Formula $V_{gsIo}=6.5v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El valor del 
+\begin_inset Formula $C_{BOOT}$
+\end_inset
+
+ debería ser entonces de un orden mayor, digamos 20nF.
+\end_layout
+
+\begin_layout Subsubsection
+Tensión máxima diodo D1
+\end_layout
+
+\begin_layout Standard
+Midiendo sobre el diodo, la tensión máxima que soporta en inversa es de
+ 100V.
+\end_layout
+
+\begin_layout Subsubsection
+Función de UVLO
+\end_layout
+
+\begin_layout Standard
+El UVLO del LTC4446 es el Undervoltage Lockout, cuya función es monitorear
+ 
+\begin_inset Formula $V_{cc}$
+\end_inset
+
+, según la datasheet, cuando 
+\begin_inset Formula $Vcc$
+\end_inset
+
+ cae por debajo de 
+\begin_inset Formula $6.15V$
+\end_inset
+
+, los pines de salida BG yTG que alimentan a los MOS, son llevados a tierra
+ (GND) y a TS (nodo A) respectivamente, lo que ocasiona que se apaguen los
+ MOSFETs externos, es decir los switches M1 y M2.
+ Cuando 
+\begin_inset Formula $V_{cc}$
+\end_inset
+
+ vuelve a su valor usual, la operación normal se retoma.
+\end_layout
+
+\begin_layout Standard
+Un ejemplo puede que se enciendan ambos transistores debido al comportamiento
+ indefinido ocasionado por una baja de tensión en 
+\begin_inset Formula $V_{cc}$
+\end_inset
+
+ lo que ocasionaría una falla de tipo Shoot-Through, lo que podría evitarse
+ con este control.
+\end_layout
+
+\begin_layout Subsubsection
+Falla Shoot-Through
+\end_layout
+
+\begin_layout Standard
+Se llama Shoot-Through cuando ambos transistores se encienden al mismo tiempo,
+ lo que produce un cortocircuito en la alimentación.
+ El integrado LTC4446 no tiene protección contra esta falla, pero otros
+ integrados sí.
+ Una protección ante este tipo de fallas suele ser manejar un deadtime,
+ es decir un tiempo muerto entre el encendido de ambos transistores, y para
+ esto, cada uno tiene un duty cylce menor al 50%.
+\end_layout
+
+\begin_layout Subsection
+Medio Puente – Modulación Cuadrada
+\end_layout
+
+\begin_layout Subsubsection
+Nodos C2 y C3
+\end_layout
+
+\begin_layout Standard
+La tensión entre los capacitores es 
+\begin_inset Formula $Vd/2$
+\end_inset
+
+, 50V.
+ Las corrientes circulan como se muestra a continuación, y se muestra también
+ la simulación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/circuleishon.PNG
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circulación de corrientes en los capacitores.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/corrientesC.PNG
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Carga y descarga en los capacitores C2 y C3.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Corrientes en los switches y los diodos
+\end_layout
+
+\begin_layout Standard
+Cuando se enciende 
+\begin_inset Formula $Q_{A+}$
+\end_inset
+
+, la corriente circula por éste y por la rama de la inductancia L1 y la
+ resistencia R1, y luego a través de C2 cargándolo, mientras que C3 se carga
+ negativamente.
+ Cuando se enciende 
+\begin_inset Formula $Q_{A-}$
+\end_inset
+
+, la corriente circula por C3 y por la rama de la inductancia, y mediante
+ 
+\begin_inset Formula $Q_{A-}$
+\end_inset
+
+.
+ En este caso, C3 se carga de manera positiva y C2 se carga negativamente.
+\end_layout
+
+\begin_layout Subsubsection
+Serie de Fourier de señal cuadrada y su FFT
+\end_layout
+
+\begin_layout Standard
+La serie de Fourier correspondiente a una señal cuadrada es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x(t)\approx\frac{2A}{in\pi}\cdot e^{in2\pi\frac{t}{T}},\,\,n\,\,impar
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/fft.PNG
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FFT de la modulación cuadrada.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:FFT-de-la"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La frecuencia fundamental es 50kHz, la simulación se puede observar en la
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:FFT-de-la"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, donde las amplitudes relevantes corresponden a múltiplos impares de la
+ frecuencia fundamental, lo que se condice con el espectro de una señal
+ cuadrada.
+ Esto se debe a que se modula con una triangular en vez de una rampa, lo
+ que elimina los subarmónicos.
 \end_layout
 
 \end_body
