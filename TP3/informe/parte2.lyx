@@ -79,10 +79,14 @@
 \begin_body
 
 \begin_layout Section
-- Inverter Trifásico
+Inverter Trifásico
 \end_layout
 
 \begin_layout Subsection
+Generación PWM y Disparo
+\end_layout
+
+\begin_layout Subsubsection
 Corrientes en los transistores
 \end_layout
 
@@ -195,7 +199,7 @@ Cuando un transistor se apaga el otro se enciende.
  ve en el gráfico.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Cambio en velocidad de conmutación de los transistores
 \end_layout
 
@@ -220,7 +224,7 @@ De esta manera podemos retrasar por ejemplo el encendido y dejar el apagado
  en el punto anterior bajaría considerablemente.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Señales de control con microprocesador
 \end_layout
 

@@ -99,7 +99,7 @@ filename "caratula.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "ej1.lyx"
+filename "parte1.lyx"
 
 \end_inset
 
@@ -109,7 +109,7 @@ filename "ej1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "ej2.lyx"
+filename "parte2.lyx"
 
 \end_inset
 
@@ -119,17 +119,7 @@ filename "ej2.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "ej3.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "ej3-tp2.lyx"
+filename "punto22.lyx"
 
 \end_inset
 

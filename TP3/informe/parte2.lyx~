@@ -28,7 +28,9 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -44,6 +46,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -76,7 +79,201 @@
 \begin_body
 
 \begin_layout Section
-- Inverter Trifásico
+Inverter Trifásico
+\end_layout
+
+\begin_layout Subsection
+Corrientes en los transistores
+\end_layout
+
+\begin_layout Standard
+En el siguiente gráfico se puede observar el momento de conmutación del
+ transistor M2, tanto su tensión como su corriente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/tensionllave.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/corrientetrans.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión y corriente en M2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+se puede observar un gran pico de corriente en ambas conmutaciones del transisto
+r.
+ Esto se debe a que tanto M2 como M3 (que es el transistor en la misma rama)
+ buscan conmutar lo mas simultáneo posible.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagenes/M2yM3.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+M2 y M3 en misma rama
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando un transistor se apaga el otro se enciende.
+ Como es de esperar esta conmutación no es instantánea y a los transistores
+ les lleva un tiempo pasar de un estado al otro.
+ En la búsqueda de apagar y encender los transistores al mismo tiempo, hay
+ un instante en que ambos están conmutando a la vez dando un camino de poca
+ resistencia a la fuente, generando así un gran pico de corriente como se
+ ve en el gráfico.
+\end_layout
+
+\begin_layout Subsection
+Cambio en velocidad de conmutación de los transistores
+\end_layout
+
+\begin_layout Standard
+Sabiendo que la conmutación de los transistores MOS se realiza mediante
+ la carga y descarga de un capacitor, se podría controlar la velocidad de
+ esta conmutación agregando una resistencia en el Gate de transistor.
+ Así dependiendo el valor de esta resistencia podría retrasarse el momento
+ de conmutación de los transistores.
+ Si pusiéramos en el gate solo una resistencia, este generaría que tanto
+ el encendido y apagado del MOS sean más lentos.
+ Por lo tanto es posible poner en paralelo a esta resistencia un diodo,
+ así en un sentido se vería la resistencia y en el otro sentido el diodo
+ pondría en corto a esta resistencia dejando al capacitor de Gate cargarse
+ o descargarse (dependiendo del sentido del diodo) a la máxima velocidad.
+\end_layout
+
+\begin_layout Standard
+De esta manera podemos retrasar por ejemplo el encendido y dejar el apagado
+ del transistor a la velocidad de conmutación normal.
+ Así evitaremos el overlapping de los transistores y la corriente observada
+ en el punto anterior bajaría considerablemente.
+\end_layout
+
+\begin_layout Subsection
+Señales de control con microprocesador
+\end_layout
+
+\begin_layout Standard
+Para generar el control con un microprocesador se debería armar una tabla
+ con los valores de una senoidal, si la tabla fuese de 512 puntos, sería
+ equivalente a guardar una senoidal “muestreada” a una frecuencia 512 veces
+ mas rapida que la señal.
+ Luego se deberá recorrer esta tabla con tres punteros equidistantes uno
+ del otro, esto equivaldría a tener senoidales desfasadas 120º entre sí.
+ 
+\end_layout
+
+\begin_layout Standard
+Luego será necesario comparar estas senoidales con señales triangulares,
+ estas señales triangulares no necesitan una tabla de valores, ya que son
+ una recta de subida y otra de bajada que pueden ser calculadas con una
+ simple cuenta.
+ La frecuencia de estas señales triangulares tienen que ser un múltiplo
+ impar de la frecuencia de la senoidal, preferentemente múltiplo de tres
+ también.
+ 
+\end_layout
+
+\begin_layout Standard
+La frecuencia de clock necesario para esto (suponiendo que cada comparación
+ se hace en un flanco de clock):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{clock}=m_{f}*f_{senoidal}*512*3
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde el tres viene de que tiene que realizar tres comparaciones antes de
+ actualizar los valores de salida.
+ 
+\end_layout
+
+\begin_layout Standard
+Así se podrá generar las seis señales de control para los transistores,
+ se puede ver que con lo antes mencionado se generarían 3 señales simplemente,
+ pero los transistores en una misma rama se encienden con la misma señal
+ solo que negada uno del otro.
+ De esta manera es imposible que los transistores se enciendan o apaguen
+ al mismo tiempo.
 \end_layout
 
 \end_body
